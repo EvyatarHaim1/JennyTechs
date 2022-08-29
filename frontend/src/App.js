@@ -7,10 +7,7 @@ function App() {
   // create sorting
   return (
     <div className="App">
-      <div style={{ display: 'flex' }}>
-        <Table />
-        <Test />
-      </div>
+      <Table />
     </div>
   );
 }
