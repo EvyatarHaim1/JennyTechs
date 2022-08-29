@@ -116,12 +116,12 @@ export default function DenseTable() {
               <TableCell component="th" scope="row">
                 {row.ISOCODE}
               </TableCell>
-              <TableCell align="right">{row.VERSION}</TableCell>
-              <TableCell align="right">{row.CREATED}</TableCell>
-              <TableCell align="right">{row.MODIFIED}</TableCell>
-              <TableCell align="right">{row.CATEGORY}</TableCell>
-              <TableCell align="right">{row.COMPANY}</TableCell>
-              <TableCell align="right">{row.STATUS}</TableCell>
+              <TableCell align="center">{row.VERSION}</TableCell>
+              <TableCell align="center">{row.CREATED}</TableCell>
+              <TableCell align="center">{row.MODIFIED}</TableCell>
+              <TableCell align="center">{row.CATEGORY}</TableCell>
+              <TableCell align="center">{row.COMPANY}</TableCell>
+              <TableCell align="center">{row.STATUS}</TableCell>
             </TableRow>
           ))}
         </TableBody>
