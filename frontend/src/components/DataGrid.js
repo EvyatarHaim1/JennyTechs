@@ -65,7 +65,7 @@ export default function Table({ products }) {
         doc.text("JennyTechs products", 20, 10);
         doc.autoTable({
             theme: "grid",
-            columns: columns.map((col) => ({ dataKey: col.field })),
+            columns: columns.map((col) => ({ header: col.headerName, dataKey: col.field })),
             body: rows,
         });
         doc.save("Jenny-Tech-table.pdf");
@@ -74,7 +74,7 @@ export default function Table({ products }) {
     return (
         <div>
 
-            <Box sx={{ height: 270, width: '70%', margin: "auto", marginTop: "100px" }}>
+            <Box sx={{ height: 270, width: '70%', margin: "auto", marginTop: "50px" }}>
                 <DataGrid
                     rows={rows}
                     columns={columns}

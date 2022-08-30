@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Table products={products} /> */}
+      <h1 style={{ display: 'flex', justifyContent: 'center', color: "purple", marginTop: "50px" }}>JennyTechs products</h1>
       <DataGrid products={products} />
     </div>
   );
