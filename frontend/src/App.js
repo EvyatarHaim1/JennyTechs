@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import Table from './components/Table';
 import axios from 'axios';
+import styled from "styled-components";
 import DataGrid from './components/DataGrid';
 
 function App() {
@@ -21,10 +21,17 @@ function App() {
 
   return (
     <div className="App">
-      <h1 style={{ display: 'flex', justifyContent: 'center', color: "purple", marginTop: "50px" }}>JennyTechs products</h1>
+      <H1>JennyTechs products</H1>
       <DataGrid products={products} />
     </div>
   );
 }
 
 export default App;
+
+const H1 = styled.h1`
+display: flex;
+justify-content: center;
+color: purple;
+margin-top: 50px; 
+`
