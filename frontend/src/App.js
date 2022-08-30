@@ -1,13 +1,28 @@
+import { useEffect, useState } from 'react';
 import Table from './components/Table';
-import Test from './components/Test';
+import axios from 'axios';
+import DataGrid from './components/DataGrid';
 
 function App() {
-  // create export with library pdf
-  // create material table with
-  // create sorting
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getProducts()
+  }, [])
+
+  const getProducts = async () => {
+    try {
+      let productsFromDB = await axios.get("http://localhost:4200/")
+      setProducts(productsFromDB.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div className="App">
-      <Table />
+      {/* <Table products={products} /> */}
+      <DataGrid products={products} />
     </div>
   );
 }

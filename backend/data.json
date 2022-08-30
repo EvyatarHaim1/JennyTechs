@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "iso_code": "1111",
+      "version": "Version1",
+      "created_by": "Joseph C",
+      "modified by": "Joseph C",
+      "category": "Type1",
+      "company": "15.08.21",
+      "status": "Company1"
+    },
+    {
+      "iso_code": "2222",
+      "version": "Version2",
+      "created_by": "Tal D",
+      "modified by": "Tal D",
+      "category": "Multi",
+      "company": "15.08.21",
+      "status": "Company3"
+    },
+    {
+      "iso_code": "3333",
+      "version": "Version2",
+      "created_by": "Joseph C",
+      "modified by": "Joseph C",
+      "category": "Type2",
+      "company": "15.08.21",
+      "status": "Company2"
+    },
+    {
+      "iso_code": "4444",
+      "version": "Version3",
+      "created_by": "Tal D",
+      "modified by": "Tal D",
+      "category": "Type1",
+      "company": "15.08.21",
+      "status": "Company1"
+    }
+  ]
+}

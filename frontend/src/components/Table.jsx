@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import styled from "styled-components";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import { Button } from "@mui/material";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Button,
+} from "@mui/material";
 import Select from "./Select";
 import { columns } from "../tableContent";
 
@@ -68,7 +70,7 @@ const rows = [
   ),
 ];
 
-export default function DenseTable() {
+export default function DenseTable({ products }) {
   const [iso, setIso] = useState("ASC");
   const [version, setVersion] = useState("ASC");
   const [created, setCreated] = useState("ASC");
@@ -94,7 +96,7 @@ export default function DenseTable() {
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableColumns>
             <TableRow>
-              <TableCell>
+              <TableCell sortDirection="false">
                 ISO CODE
                 <Select onChange={(e) => setIso(e.target.value)} />
               </TableCell>
@@ -125,19 +127,22 @@ export default function DenseTable() {
             </TableRow>
           </TableColumns>
           <TableBody>
-            {rows.map((row) => (
+            {products.map((product) => (
               <TableRow
-                key={row.ISOCODE}
+                key={product._id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-                <TableCell component="th" scope="row">
-                  {row.ISOCODE}
+                <TableCell
+                  component="th"
+                  scope="row"
+                  options={{ sortable: true }}>
+                  {product.iso_code}
                 </TableCell>
-                <TableCell align="center">{row.VERSION}</TableCell>
-                <TableCell align="center">{row.CREATED}</TableCell>
-                <TableCell align="center">{row.MODIFIED}</TableCell>
-                <TableCell align="center">{row.CATEGORY}</TableCell>
-                <TableCell align="center">{row.COMPANY}</TableCell>
-                <TableCell align="center">{row.STATUS}</TableCell>
+                <TableCell align="center">{product.version}</TableCell>
+                <TableCell align="center">{product.created_by}</TableCell>
+                <TableCell align="center">{product.modified_by}</TableCell>
+                <TableCell align="center">{product.category}</TableCell>
+                <TableCell align="center">{product.company}</TableCell>
+                <TableCell align="center">{product.status}</TableCell>
               </TableRow>
             ))}
           </TableBody>
